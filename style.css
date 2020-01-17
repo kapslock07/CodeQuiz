@@ -1,0 +1,26 @@
+ #highscores {
+    float: left;
+}
+
+#timer {
+    float: right;
+    margin-right: 50px;
+}
+
+#mainSection {
+    margin: auto;
+    text-align: center;
+    width: 40%;
+    padding: 75px 10px 10px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  button {
+    margin: auto;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+  }
+
