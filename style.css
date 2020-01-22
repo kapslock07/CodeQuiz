@@ -29,3 +29,26 @@
     margin: auto;
     text-align: center;
   }
+
+  #yourScore {
+    margin: auto;
+    text-align: center;
+    padding: 75px 10px 10px 10px;   
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #highscoresHeader {
+    margin: auto;
+    text-align: center;
+    padding: 75px 10px 10px 10px;   
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  #form {
+    margin: auto;
+    text-align: center;
+    padding: 75px 10px 10px 10px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }

@@ -1,6 +1,6 @@
 // ----------------METHOD 1--------------------------
 
-var timeLeft = 20;
+var timeLeft = 40;
 //$("#form").hide();
 
 var questions = [
@@ -14,12 +14,26 @@ var questions = [
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         answer: "parentheses"
     },
-    ///etc.
+    {
+        title: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+        choices: ["The User's machine running a Web browser", "The Web server", "A central machine deep within Netscape's corporate offices", "one of the above"],
+        answer: "The User's machine running a Web browser"
+    },
+    {
+        title: "______ tag is an extension to HTML that can enclose any number of JavaScript statements.",
+        choices: ["<script>", "<body>", "<head>", "<title>"],
+        answer: "<script>"
+    },
+    {
+        title: "The _______ method of an Array object adds and/or removes elements from an array.",
+        choices: ["Reverse", "Shift", "Slice", "Splice"],
+        answer: "Splice"
+    },
 ];
 
 $("#startButton").on("click", function () {
 
-    $("#mainSection").html("<p>This is Question 1</p>");
+
 
     setInterval(function () {
         timeLeft--;
@@ -27,10 +41,11 @@ $("#startButton").on("click", function () {
             $("#timer").html("Time left: " + timeLeft);
 
         }
-        if (timeLeft === 0) {
-            alert('Sorry, you are out of time');
+        if (timeLeft <= 0) {
+
             //also do end of quiz function here
             clearInterval(timeLeft);
+            gameOver();
         }
     }, 1000);
 
@@ -61,16 +76,16 @@ $(document).on("click", ".answerButton", function (event) {
     //$(this) === event.target
 
     if ($(this).attr("data-answer") === questions[index].answer) {
-
-    } else {
+        index++;
+        displayQuestion();
+    }
+    else {
         timeLeft -= 10;
     }
 
-    // index = index + 1;
-    // index += 1;
+
     //if there are questions left
-    index++;
-    displayQuestion();
+
     //else show score function
 
 });
@@ -79,17 +94,18 @@ $(document).on("click", ".answerButton", function (event) {
 //inside of click listner:
 localStorage.setItem("name", timeLeft)
 
-// --------------------------------------------
-// var clickButton = $("#startButton").on("click", function () {
-//     var firstQuestion = $("#mainSection").html("<p>This is Question 1</p>" + "<div><button>Answer 1</button></div>" + "<div><button>Answer 2</button></div>" + "<div><button>Answer 3</button></div>" + "<div><button>Answer 4</button></div>");
-// });
+
 
 
 function gameOver() {
+
+
+    window.location.href = "highscores.html";
+    $("#yourScore").append(timeLeft);
     //show score
     //form.show
 
-}
+};
 
 
 

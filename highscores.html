@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <title>Code Quiz Highscores</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div id="tryAgain">
+        <a href="quiz.html">Try Again</a>
+        <div id="yourScore">Your score is: </div>
+        <form id="form">Please enter your name here:
+            <input id="formInput">
+            <button id="saveButton">save</button>
+        </form>
 
-    <script type="text/javascript">
+
+        <h1 id="highscoresHeader">Highscores</h1>
+
+        <ol id="highscoresList"></ol>
 
 
-    </script>
-
+        <script src="./script.js"></script>
 </body>
 
 </html>
