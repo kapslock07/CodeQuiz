@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Quiz Intro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div>
+        <div id="highscores">
+            <a href="highscores.html">View Highscores</a>
+        </div>
+        <div id="timer">
+            Time left:
+
+        </div>
+    </div>
+    <div id="mainSection">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers
+            will penalize your score/time by ten seconds!</p>
+        <button id="startButton">Start Quiz</button>
+    </div>
+
+
+    <form id="form">Please enter your name here:
+        <input id="formInput">
+        <button id="saveButton">save</button>
+    </form>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
+
+<!-- CREATE ARRAYS FOR ANSWERS (WRONG, WRONG, CORRECT, WRONG) AND ASSIGN THEM AS ATTRIBUTES FOR EACH  -->
+<!-- MAYBE ONE ID FOR ALL ANSWERS, (SEE CRYSTAL EXAMPLE) -->

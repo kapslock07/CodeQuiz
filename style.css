@@ -52,3 +52,7 @@
     padding: 75px 10px 10px 10px; 
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
+
+  @-ms-viewport {
+    width: 100vw;
+  }
