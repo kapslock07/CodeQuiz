@@ -1,6 +1,6 @@
 // ----------------METHOD 1--------------------------
 $(document).ready(function () {
-    var timeLeft = 75;
+    var timeLeft = 60;
 
     $("#form").hide();
 
@@ -78,7 +78,14 @@ $(document).ready(function () {
 
         if ($(this).attr("data-answer") === questions[index].answer) {
             index++;
-            displayQuestion();
+            if (index < questions.length) {
+                displayQuestion();
+            }
+            else {
+
+                clearInterval(timeLeft);
+                gameOver();
+            };
         }
         else {
             timeLeft -= 10;
@@ -93,7 +100,7 @@ $(document).ready(function () {
 
     //localStorage.getItem()
     //inside of click listner:
-    localStorage.setItem("name", timeLeft)
+    // localStorage.setItem("name", timeLeft)
 
 
 
@@ -102,9 +109,21 @@ $(document).ready(function () {
 
 
 
-
-        $("#mainSection").text("Please enter your name")
+        clearInterval(timeLeft);
+        $("#mainSection").text("Please enter your name");
         $("#form").show();
+
+
+        $("#saveButton").on("submit", function (event) {
+
+            var inputName = $("#formInput");
+            localStorage.setItem("name", inputName);
+            localStorage.setItem("score", timeLeft);
+
+
+        });
+
+
 
         // $(document).on("click", ".#saveButton", function (event) {
         //     localStorage.setItem("name", timeLeft)
@@ -113,12 +132,20 @@ $(document).ready(function () {
 
 
         // window.location.href = "highscores.html";
-        // $("#yourScore").append(timeLeft);
+
+        // // $("#yourScore").append(timeLeft);
         //show score
         //form.show
 
     };
 
 
+    var newScore = localStorage.getItem("name");
+    var newScore = $("<li>");
+    newScore.text(localStorage.getItem("name"));
+    $("#highscoresList").append(newScore);
 
+    //localStorage.getItem()
+    //inside of click listner:
+    // localStorage.setItem("name", timeLeft)
 });
