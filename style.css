@@ -53,6 +53,15 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
+  #highscoresList {
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    padding: 75px 10px 10px 10px;   
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
   @-ms-viewport {
     width: 100vw;
   }

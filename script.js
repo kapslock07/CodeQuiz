@@ -115,12 +115,11 @@ $(document).ready(function () {
 
 
         $("#saveButton").on("submit", function (event) {
-
-            var inputName = $("#formInput");
+            // window.location.href = "highscores.html";
+            var inputName = $("#formInput").val();
             localStorage.setItem("name", inputName);
             localStorage.setItem("score", timeLeft);
-
-
+            addToScoreboard();
         });
 
 
@@ -131,20 +130,19 @@ $(document).ready(function () {
 
 
 
-        // window.location.href = "highscores.html";
+
 
         // // $("#yourScore").append(timeLeft);
         //show score
         //form.show
 
     };
-
-
-    var newScore = localStorage.getItem("name");
-    var newScore = $("<li>");
-    newScore.text(localStorage.getItem("name"));
-    $("#highscoresList").append(newScore);
-
+    function addToScoreboard() {
+        var newScore = localStorage.getItem("name");
+        var newScore = $("<li>");
+        newScore.text(localStorage.getItem("name"));
+        $("#highscoresList").append(newScore);
+    };
     //localStorage.getItem()
     //inside of click listner:
     // localStorage.setItem("name", timeLeft)
