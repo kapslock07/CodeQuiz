@@ -1,4 +1,3 @@
-// ----------------METHOD 1--------------------------
 $(document).ready(function () {
     var timeLeft = 60;
 
@@ -44,7 +43,6 @@ $(document).ready(function () {
             }
             if (timeLeft <= 0) {
 
-                //also do end of quiz function here
                 clearInterval(timeLeft);
                 gameOver();
             }
@@ -74,7 +72,6 @@ $(document).ready(function () {
     }
 
     $(document).on("click", ".answerButton", function (event) {
-        //$(this) === event.target
 
         if ($(this).attr("data-answer") === questions[index].answer) {
             index++;
@@ -85,56 +82,27 @@ $(document).ready(function () {
 
                 clearInterval(timeLeft);
                 gameOver();
-            };
+            }
         }
         else {
             timeLeft -= 10;
         }
 
-
-        //if there are questions left
-
-        //else show score function
-
     });
-
-    //localStorage.getItem()
-    //inside of click listner:
-    // localStorage.setItem("name", timeLeft)
-
-
-
 
     function gameOver() {
 
-
-
-        clearInterval(timeLeft);
         $("#mainSection").text("Please enter your name");
         $("#form").show();
 
 
         $("#saveButton").on("submit", function (event) {
-            // window.location.href = "highscores.html";
             var inputName = $("#formInput").val();
             localStorage.setItem("name", inputName);
             localStorage.setItem("score", timeLeft);
             addToScoreboard();
+            // window.location.href = "highscores.html";
         });
-
-
-
-        // $(document).on("click", ".#saveButton", function (event) {
-        //     localStorage.setItem("name", timeLeft)
-
-
-
-
-
-
-        // // $("#yourScore").append(timeLeft);
-        //show score
-        //form.show
 
     };
     function addToScoreboard() {
@@ -143,7 +111,5 @@ $(document).ready(function () {
         newScore.text(localStorage.getItem("name"));
         $("#highscoresList").append(newScore);
     };
-    //localStorage.getItem()
-    //inside of click listner:
-    // localStorage.setItem("name", timeLeft)
+
 });
